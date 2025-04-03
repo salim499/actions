@@ -1,11 +1,19 @@
-name: Exemple Simple
+name: Exécuter un script JavaScript
 
 on: [push]
 
 jobs:
-  hello-world:
+  run-js:
     runs-on: ubuntu-latest
-    steps:
-      - name: Afficher un message
-        run: echo "Hello, GitHub Actions!"
 
+    steps:
+      - name: Récupérer le code du dépôt
+        uses: actions/checkout@v3
+
+      - name: Installer Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Exécuter le script JavaScript
+        run: node script.js
