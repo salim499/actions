@@ -16,4 +16,4 @@ jobs:
           node-version: '18'
 
       - name: Exécuter le script JavaScript
-        run: node script.js
+        run: node index.js
